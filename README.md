@@ -18,7 +18,7 @@ CSV should have 2 columns:
 - col0: image path
 - col1: integer label 
 
-## Configure paths via env vars (recommended)
+## Configure paths via env vars
 ```bash
 export DATA_ROOT=/path/to/your/data
 export WEIGHTS_DIR=/path/to/your/weights
