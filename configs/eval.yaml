@@ -1,0 +1,10 @@
+device: auto
+
+data:
+  test_csv: ${DATA_ROOT}/test.csv
+  batch_size: 64
+  num_workers: 4
+
+paths:
+  ckpt_path: outputs/proto_metric_best.pth
+  ctrans_pretrained: ${WEIGHTS_DIR}/ctranspath_pretrained.pth

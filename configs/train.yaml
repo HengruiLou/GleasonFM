@@ -1,0 +1,49 @@
+seed: 42
+device: auto   # auto/cuda/cpu
+
+data:
+  train_csv: ${DATA_ROOT}/train.csv
+  num_workers: 4
+
+train:
+  batch_size: 256
+  num_epochs: 50
+  grad_clip: 3.0
+  log_every_steps: 5000
+  feature_extract_batch_size: 32
+
+optim:
+  lr_proj_head: 4.0e-3
+  lr_backbone: 1.0e-4
+  scheduler:
+    name: ReduceLROnPlateau
+    patience: 10
+    factor: 0.5
+
+model:
+  embed_dim: 256
+  tau: 0.03
+  unfreeze_ratio: 1.0
+  margin_other: 0.12
+  margin_45: 0.25
+
+proto:
+  k_max: 12
+  min_keep: 15
+  small_ratio: 0.09
+  delta_pos: 0.08
+  delta_neg: 0.08
+  noise_max: 10
+  min_weight: 0.10
+
+distill:
+  lambda_kd: 0.5
+  gamma_focal: 2.0
+  mask_low: 0.3
+  mask_high: 0.7
+
+paths:
+  ctrans_weight: ${WEIGHTS_DIR}/ctranspath_pretrained.pth
+  teacher_weight: ${WEIGHTS_DIR}/teacher_binary.pth
+  output_dir: outputs
+  ckpt_name: proto_metric_best.pth
