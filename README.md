@@ -1,4 +1,4 @@
-# Gleason Proto Metric (Open Source Template)
+# Gleason Proto Metric 
 
 A refactored project scaffold for:
 - CTransPath backbone feature extraction
