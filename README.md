@@ -1,4 +1,4 @@
-# Gleason Proto Metric 
+# GleasonFM
 
 A refactored project scaffold for:
 - CTransPath backbone feature extraction
